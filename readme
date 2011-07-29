@@ -1,0 +1,59 @@
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+()()()()()()()()()()()()( <[ icy- row toy ]> )()()()()()()()()()()()()
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+A little exploration in to persistence of vision using just one kind of
+component - seven LEDs. We grabbed an 8-long header pin, added a little
+piece of stripboard as a spacer (optional!), soldered the LEDs in place
+each facing the same direction, and stuck it in an Arduino.
+
+Some crafty code and careful datasheet reading brought these lights to
+life, dancing with interesting patterns. That's enough pixels to write
+little messages in the air, draw hearts, and make patterns. Not bad for
+less than a dollar in components*!
+
+....##..##......##......##..##..##......##........######..######......##
+..##..##..##....####..####..##..##......##........##......##....##..##..
+..##......##....##..##..##....##........##........####....##....##..##..
+....##..##......##......##....##........##........##......##....##....##
+....##..##......##......##....##........##........##......##....##..##..
+......##........##......##....##........########..######..######......##
+
+*seriously now, who doesn't have an Arduino laying around somewhere?
+
+
+                     -=-=- Down and Dirty -=-=-
+
+The gasps could be heard from miles around - LEDs driven with no single
+resist resistor? How outrageous! Here's the beans and I'm about to spill
+'em.
+
+Look at any LEDs datasheet at all, and you'll see a 'peak current'. It's
+usually *at*least*double* the normal maximum - often five times more!
+These datasheets also specify a maximum duty cycle and duration, generally:
+
+  If you run your LED for one tenth of the time, you can power it with
+  five times the normal current, leaving you half as bright.
+
+Half as good? Sounds pretty rubbish, but think about it? When you start
+multiplexing LEDs together, you're never going to have them on for more
+than half the time anyway - so you save on power and components without
+a downside. Pretty excellent!
+
+There's just one niggling thing - a bug in your code could make the
+chip freeze up, leaving some LEDs on full strength for far too long!
+
+Best be careful - no guarantees on this one. Still, LEDs are cheap. :)
+
+
+                                                                ---<3
+                                                                  Jenna
+
+<o> Parts
+ o= Strip of 8 Pin Headers <1>
+ o= Seven LEDs of any variety <2>
+ o= Stripboard is helpful if using surface mount LEDs <3>
+
+<1> http://www.icy.com.au/shop/product/sku/ph/
+<2> http://www.icy.com.au/shop/browse/categories/leds-and-lighting/
+<3> http://shop.ebay.com.au/i.html?_nkw=stripboard
