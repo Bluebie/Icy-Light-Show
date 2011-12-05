@@ -19,8 +19,8 @@ typedef unsigned char boolean;
 #define    no false
 
 // set a pin on DDRB to be an input or an output - i.e. becomeOutput(pin(3));
-inline void becomeInput(byte pinmap) { DDRD &= ~pinmap; }
-inline void becomeOutput(byte pinmap) { DDRD |= pinmap; }
+inline void inputs(byte pinmap) { DDRD &= ~pinmap; }
+inline void outputs(byte pinmap) { DDRD |= pinmap; }
 
 // turn a pin on or off
 inline void lightOn(byte light) { PORTD |= light; }

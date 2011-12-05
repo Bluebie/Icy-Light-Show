@@ -104,7 +104,7 @@ int main() {
   byte counter = 0;
   byte prev = 0;
   
-  becomeOutput(0xFF);
+  outputs(0xFF);
   
   lightOff(pin(0) | pin(1) | pin(2) | pin(3) | pin(4) | pin(5) | pin(6) | pin(7));
   
